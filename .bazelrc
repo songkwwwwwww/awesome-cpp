@@ -1,5 +1,5 @@
 # Use clang as the C++ compiler
-build --compiler=clang
+# build --compiler=clang
 build --cxxopt='-std=c++17'
 
 # Enable optimization and debug symbols for development builds
@@ -8,54 +8,54 @@ build:debug --cxxopt='-O0'
 build:debug --cxxopt='-g'
 
 # Enable optimization for release builds
-build:release --compilation_mode=opt
-build:release --cxxopt='-O3'
+# build:release --compilation_mode=opt
+# build:release --cxxopt='-O3'
 
 # Enable warnings
-build --cxxopt='-Wall'
-build --cxxopt='-Wextra'
-build --cxxopt='-Werror'
+# build --cxxopt='-Wall'
+# build --cxxopt='-Wextra'
+# build --cxxopt='-Werror'
 
 # Enable debugging
-build:debug --cxxopt='-ggdb'
+# build:debug --cxxopt='-ggdb'
 
 # Control the verbosity of the Bazel output
-build --verbose_failures
+# build --verbose_failures
 
 # Specify the CPU architecture
-build --cpu=k8
+# build --cpu=k8
 
 # Enable sandboxing for builds
-build --spawn_strategy=sandboxed
-build --genrule_strategy=sandboxed
+# build --spawn_strategy=sandboxed
+# build --genrule_strategy=sandboxed
 
 # Remote cache settings (example)
 # build --remote_cache=grpc://hostname:port
 
 # Specify the C++ toolchain
-build --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
-build --crosstool_top=@bazel_tools//tools/cpp:toolchain
+# build --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+# build --crosstool_top=@bazel_tools//tools/cpp:toolchain
 
 # Use dynamic linking
-build --dynamic_mode=default
+# build --dynamic_mode=default
 
 # Enable colored output
-build --color=yes
+# build --color=yes
 
 # Build test targets by default
-test --build_tests_only
+# test --build_tests_only
 
 # Run tests in parallel
-test --test_output=errors
-test --test_summary=short
-test --jobs=4
+# test --test_output=errors
+# test --test_summary=short
+# test --jobs=4
 
 # Caching and execution strategy options
-build --disk_cache=/path/to/cache
-build --repository_cache=/path/to/repository_cache
+# build --disk_cache=/path/to/cache
+# build --repository_cache=/path/to/repository_cache
 
 # AddressSanitizer and UndefinedBehaviorSanitizer for debugging
-build:sanitizers --copt=-fsanitize=address
-build:sanitizers --copt=-fsanitize=undefined
-build:sanitizers --linkopt=-fsanitize=address
-build:sanitizers --linkopt=-fsanitize=undefined
+# build:sanitizers --copt=-fsanitize=address
+# build:sanitizers --copt=-fsanitize=undefined
+# build:sanitizers --linkopt=-fsanitize=address
+# build:sanitizers --linkopt=-fsanitize=undefined
