@@ -1,6 +1,12 @@
 # Use clang as the C++ compiler
 # build --compiler=clang
 build --cxxopt='-std=c++17'
+build --sandbox_debug
+build --test_output=all
+
+test --sandbox_debug
+test --test_output=all
+test --cache_test_results=no
 
 # Enable optimization and debug symbols for development builds
 build:debug --compilation_mode=dbg
