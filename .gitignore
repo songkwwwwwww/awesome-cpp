@@ -89,3 +89,14 @@ node_modules/
 
 *.tgz
 *.zip
+
+CMakeLists.txt
+
+etc/
+
+snippet/
+
+docs/
+apps/
+include/
+tests/
