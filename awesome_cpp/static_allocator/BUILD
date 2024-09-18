@@ -22,3 +22,16 @@ cc_test(
         "@com_google_googletest//:gtest_main",
     ],
 )
+
+cc_binary(
+    name = "static_allocator_benchmark",
+    srcs = [
+        "static_allocator_benchmark.cpp",
+    ],
+    deps = [
+        ":static_allocator",
+        "@com_github_google_benchmark//:benchmark",
+        "@com_github_google_benchmark//:benchmark_main",
+        "@com_github_google_googletest//:gtest",
+    ],
+)
