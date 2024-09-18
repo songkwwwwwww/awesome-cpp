@@ -27,7 +27,7 @@ template <typename T, size_t PoolSize = 10> class ObjectPool {
 public:
   using ObjectPtr = std::shared_ptr<T>;
 
-  ObjectPool(StaticAllocator<T> &allocator) : allocator(allocator) {}
+  ObjectPool(StaticAllocator<T, PoolSize> &allocator) : allocator(allocator) {}
 
   template <typename... Args> ObjectPtr acquire(Args &&...args) {
     if (!pool.empty()) {
